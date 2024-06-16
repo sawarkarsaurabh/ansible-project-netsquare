@@ -1,0 +1,2 @@
+[targets]
+host1 ansible_host=<IP_address_of_host1>
