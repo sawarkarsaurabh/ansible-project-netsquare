@@ -22,7 +22,7 @@
 
 - name: Copy app.py
   template:
-    src: app.py
+    src: /home/ubuntu/ansible-project-netsquare/roles/app-deployment/template/app.py
     dest: "{{ app_dir }}/app.py"    
     
 - name: Deploy Flask application
