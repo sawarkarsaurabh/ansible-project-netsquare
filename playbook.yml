@@ -1,4 +1,5 @@
 - hosts: targets
+  become: true
   vars:
     app_port: 5000
     app_dir: /opt/example
