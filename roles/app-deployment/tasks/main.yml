@@ -7,7 +7,12 @@
   file:
     path: "{{ app_dir }}"
     state: directory
-
+    
+- name: Copy wheel file
+  copy:
+    src: example-1.1.1-py3-none-any.whl
+    dest: "{{ app_dir }}"
+    
 - name: Create virtual environment
   pip:
     name:
