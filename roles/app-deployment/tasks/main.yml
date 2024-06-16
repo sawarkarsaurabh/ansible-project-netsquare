@@ -22,7 +22,7 @@
 
 - name: Deploy Flask application
   pip:
-    name: "{{ app_dir }}/{{ app_wheel }}"
+    name: "{{ app_dir }}//home/ubuntu/ansible-project-netsquare/files
     virtualenv: "{{ app_dir }}/venv"
 
 - name: Copy app.py
