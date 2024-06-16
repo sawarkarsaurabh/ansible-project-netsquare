@@ -14,6 +14,11 @@
       - flask
       - wheel
     virtualenv: "{{ app_dir }}/venv"
+    
+- name: Copy wheel file
+  copy:
+    src: /home/ubuntu/ansible-project-netsquare/files
+    dest: "{{ app_dir }}"   
 
 - name: Deploy Flask application
   pip:
