@@ -8,17 +8,17 @@
     path: "{{ app_dir }}"
     state: directory
     
-- name: Copy wheel file
-  copy:
-    src: "{{ app_wheel }}"
-    dest: "{{ app_dir }}"
-    
 - name: Create virtual environment
   pip:
     name:
       - flask
       - wheel
     virtualenv: "{{ app_dir }}/venv"
+
+    - name: Copy wheel file
+  copy:
+    src: "{{ app_wheel }}"
+    dest: "{{ app_dir }}"
 
 - name: Deploy Flask application
   pip:
