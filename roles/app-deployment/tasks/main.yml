@@ -20,15 +20,15 @@
     src: /home/ubuntu/ansible-project-netsquare/files
     dest: "{{ app_dir }}"   
 
+- name: Copy app.py
+  template:
+    src: app.py
+    dest: "{{ app_dir }}/app.py"    
+    
 - name: Deploy Flask application
   pip:
     name: "/opt/example/{{ app_wheel }}"
     virtualenv: "{{ app_dir }}/venv"
-
-- name: Copy app.py
-  template:
-    src: app.py
-    dest: "{{ app_dir }}/app.py"
 
 - name: Start Flask application
   command: "{{ app_dir }}/venv/bin/flask run -p {{ app_port }}"
