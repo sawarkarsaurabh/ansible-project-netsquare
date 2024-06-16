@@ -1,1 +1,8 @@
-
+- hosts: targets
+  vars:
+    app_port: 5000
+    app_dir: /opt/example
+    app_wheel: example-1.1.1-py3-none-any.whl
+  roles:
+    - ca-certificates
+    - app-deployment
